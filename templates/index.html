@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Predict cats and dogs</title>
+<link href="../static/style.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/303450ab0e.js" crossorigin="anonymous"></script>
+</head>
+<script>
+function showloading() {
+  image = document.getElementById('loading_image');
+  image.style.display = 'inline'
+}
+</script>
+<style>
+.btn-primary{
+  position: relative;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+</style>
+<body>
+<!--video and content-->
+<div class="overlay"></div>
+<video autoplay muted loop playsinline>
+  <source src="https://res.cloudinary.com/dwbfhtj8x/video/upload/v1599741239/InnovationXLab__Artificial_Intelligence_INTRO_VIDEO_online-video-cutter.com_kbb6w5.mp4" type="video/mp4">
+</video>
+<div class="masthead">
+  <div class="masthead-bg"></div>
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-12 my-auto">
+        <div class="masthead-content text-white py-5 py-md-0">
+          <h1 class="mb-3">Resnet50</h1>
+          <h1 class="mb-3">VGG16</h1>
+          <p class="mb-5">Power by Convolution Neural Network</p>
+          <!--button upload image-->
+          <form action="/upload" method="post" enctype="multipart/form-data" style="margin-top: 50px; width: 60%; text-align: center; margin: auto; margin-right: 120px;" onsubmit="showloading()">
+            <span class="text-left btn btn-primary btn-file">Choose file <input type="file" name="image"></span>
+            <span class="text-right"><input type="submit" value="Get result" class="btn btn-primary"></span>
+          </form>
+          <!--button upload image-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--video and content-->
+<!--social icon-->
+<div class="social-icons">
+  <ul class="list-unstyled text-center mb-0">
+    <li class="list-unstyled-item">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </li>
+    <li class="list-unstyled-item">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </li>
+    <li class="list-unstyled-item">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </li>
+    <li class="list-unstyled-item">
+      <a href="#"><i class="fab fa-github"></i></a>
+    </li>
+  </ul>
+</div>
+<!--social icon-->
+</body>
+</html>

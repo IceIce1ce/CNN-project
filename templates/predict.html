@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Predict cats and dogs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.1/vegas.min.css">
+<link rel="stylesheet" href="../static/myStyle.css">
+</head>
+<body style="overflow: hidden;">
+<!--preloader-->
+<section class="preloader">
+     <div class="spinner">
+          <span class="spinner-rotate"></span>
+     </div>
+</section>
+<!--preloader-->
+<!--main content-->
+<section id="home">
+     <div class="overlay"></div>
+     <div class="container">
+          <div class="row">
+               <div class="col-md-12 col-sm-12">
+                    <div class="home-info">
+                         <img src="{{ url_for('send_file', filename=image_file_name)}}" style ="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 10px">
+                         <h3><b style="color: cyan; font-size: 25px;">Predict this is a <span>{{ label }}</span></b></h3>
+                         <a href="/" style="text-decoration: none; color: cyan; font-weight: 650; font-size: 20px;">Go previous</a>   
+                    </div>
+               </div>
+          </div>
+     </div>
+</section>
+<!--main content-->
+<!--js file-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.1/vegas.min.js"></script>
+<!--js file-->
+<!--slideshow vegas-->
+<script>
+(function ($) {
+  "use strict";
+  // preloader
+  $(window).load(function(){$('.preloader').fadeOut(1000);});
+  // preloader
+  // slideshow vegas
+  $('body').vegas({
+    slides: [
+      {src:'https://res.cloudinary.com/dwbfhtj8x/image/upload/v1599998933/lmp1YB_crfogl.jpg'},
+      {src:'https://res.cloudinary.com/dwbfhtj8x/image/upload/v1599999397/wallpapertip_intelligent-wallpaper_1746657_l0jx0f.jpg'},
+      {src:'https://res.cloudinary.com/dwbfhtj8x/image/upload/v1599999284/wallpapertip_artificial-wallpaper_356050_xbhlxk.png'}
+    ],
+      transitionDuration: 5000,
+      timer: false,
+      overlay: false,
+      cover: true,
+      transition: [ 'zoomOut', ]
+    });
+    // slideshow vegas
+})(jQuery);
+</script>
+<!--slideshow vegas-->
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Predict cats and dogs</title>
+</head>
+<body>
+<div style="width: 90%; margin: auto; text-align: center">
+  <img src="{{ url_for('send_file', filename=image_file_name)}}" style ="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 10px">
+  <h3><b>Predict <span style="color: royalblue;">{{ accuracy }} %</span> this is a
+      <span style="color: red;">{{ label }}</span></b></h3>
+  <a href="/" style="text-decoration: none; color: black;">Go previous</a>
+</div>
+</body>
+</html>
+-->
